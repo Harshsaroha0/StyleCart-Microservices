@@ -8,13 +8,24 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8888"
 
-    cloud:
-      gateway:
-        routes:
-          - id: catalog-service
-            uri: lb://CATALOG-SERVICE
-            predicates:
-              - Path=/api/products/**
+  cloud:
+    gateway:
+      routes:
+        - id: catalog-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/api/products/**
+
+        - id: product-image-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/api/product-images/**
+
+
+        - id: inventory-service
+          uri: lb://INVENTORY-SERVICE
+          predicates:
+            - Path=/api/inventory/**
 
 eureka:
   client:
