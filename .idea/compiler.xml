@@ -12,6 +12,7 @@
         <module name="catalog-service" />
         <module name="api-gateway" />
         <module name="user-service" />
+        <module name="order-service" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="inventory-service" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
